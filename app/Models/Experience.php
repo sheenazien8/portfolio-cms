@@ -18,7 +18,8 @@ class Experience extends Model
     public function getStayAttribute(): string
     {
         return Arr::join([
-            Carbon::parse($this->start_date)->format('Y'), Carbon::parse($this->start_date)->format('Y'),
+            Carbon::parse($this->start_date)->format('Y-m'),
+            Carbon::parse($this->end_date)->format('Y-m'),
         ], '-');
     }
 }

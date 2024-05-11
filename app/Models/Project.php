@@ -26,6 +26,6 @@ class Project extends Model
 
     public function getHeaderImageUrlAttribute(): string
     {
-        return url($this->header_image);
+        return url('storage/'.$this->header_image ?? '');
     }
 }

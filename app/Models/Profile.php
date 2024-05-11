@@ -31,11 +31,11 @@ class Profile extends Model
 
     public function getProfilePictureUrlAttribute(): string
     {
-        return url($this->profile_picture ?? '');
+        return url('storage/'.$this->profile_picture ?? '');
     }
 
     public function getUrlResumeAttribute(): ?string
     {
-        return url($this->resume);
+        return url('storage/'.$this->resume ?? '');
     }
 }

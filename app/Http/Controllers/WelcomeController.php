@@ -15,7 +15,7 @@ class WelcomeController extends Controller
             ->json([
                 'profile' => Profile::first(),
                 'projects' => Project::limit(3)->get(),
-                'experiences' => Experience::limit(5)->get(),
+                'experiences' => Experience::query()->limit(5)->latest()->get(),
                 'articles' => Post::limit(3)->get(),
             ]);
     }

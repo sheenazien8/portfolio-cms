@@ -19,7 +19,7 @@ class Experience extends Model
     {
         return Arr::join([
             Carbon::parse($this->start_date)->format('Y-m'),
-            Carbon::parse($this->end_date)->format('Y-m'),
+            $this->end_date ? Carbon::parse($this->end_date)->format('Y-m') : 'Now',
         ], '-');
     }
 }
